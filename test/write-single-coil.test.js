@@ -15,7 +15,7 @@ describe('WriteSingleCoil Tests.', function () {
 
       assert.deepEqual(expected, buffer)
     })
-    it('should create a buffer from a write single coil message, false false', function () {
+    it('should create a buffer from a write single coil message, false test', function () {
       const request = new WriteSingleCoilRequest(10, false)
       const buffer = request.createPayload()
       const expected = Buffer.from([0x05, 0x00, 0x0a, 0x00, 0x00])

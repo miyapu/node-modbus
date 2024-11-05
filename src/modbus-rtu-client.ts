@@ -3,7 +3,8 @@ import MBClient from './modbus-client.js'
 import ModbusRTUClientRequestHandler from './rtu-client-request-handler.js'
 import ModbusRTUClientResponseHandler from './rtu-client-response-handler.js'
 
-import * as SerialPort from 'serialport'
+// import * as SerialPort from 'serialport'
+import { SerialPort } from 'serialport';
 import ModbusRTURequest from './rtu-request.js'
 import ModbusRTUResponse from './rtu-response.js'
 
@@ -30,7 +31,8 @@ export default class ModbusRTUClient extends MBClient<SerialPort, ModbusRTUReque
    * @param {number} [timeout=5000]
    */
   constructor (socket: SerialPort, address: number, timeout = 5000) {
-    super(socket)
+    // super(socket)
+    super(socket);
 
     this._requestHandler = new ModbusRTUClientRequestHandler(socket, address, timeout)
     this._responseHandler = new ModbusRTUClientResponseHandler()
